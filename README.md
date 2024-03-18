@@ -1,6 +1,6 @@
 # a3
  setup instructions/running application.
-To run the application a menu will be presented to the user like the one shown below:
+To run the application, a menu will be presented to the user like the one shown below:
 
 Menu:
 0. Exit
