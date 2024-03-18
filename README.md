@@ -8,6 +8,7 @@ Menu:
 3. Update a student's email
 4. Delete a student
 0. Exit
+
 Based on which function the user would like to run they can choose the correspoding number.
 After each function is called getAllStudents is run again so the user can see the updated list.
 The user can continue to run the different menu options until the user is satisfied.
