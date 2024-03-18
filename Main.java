@@ -132,7 +132,7 @@ public static void addStudent(Connection connection, String firstName, String la
         if (newInfo > 0) {
             System.out.println("New student added successfully.");//if insertion successful...print success message
         } else {
-            System.out.println("ERROR: Unable to add new student");
+            System.out.println("ERROR: Unable to add new student");//error message if unsuccessful insertion
         }
     } catch (SQLException e) {
         System.out.println(e);
@@ -141,30 +141,32 @@ public static void addStudent(Connection connection, String firstName, String la
 public static void updateStudentEmail (Connection connection, int student_id, String new_Email){
     String query = "UPDATE students SET email = ? WHERE student_id = ?";//update student email based on student id
     try (PreparedStatement statement = connection.prepareStatement(query)) {
+       //parameters for the prepared statement
         statement.setString(1, new_Email);
         statement.setInt(2, student_id); 
 
     int newInfo = statement.executeUpdate();
     if (newInfo > 0) {
-        System.out.println("Email updated successfully.");
+        System.out.println("Email updated successfully.");//if insertion successful...print success message
     } else {
-        System.out.println("ERROR: Unable to update email");
+        System.out.println("ERROR: Unable to update email");//error message if unsuccessful insertion
     }
     } catch (SQLException e) {
         System.out.println(e);
     }
 }
 public static void deleteStudent(Connection connection, int student_id){
-    String query = "DELETE FROM students WHERE student_id = ?";//delete student based on student id
+    String query = "DELETE FROM students WHERE student_id = ?";//delete student based on student id given by user
    
     try (PreparedStatement statement = connection.prepareStatement(query)) {
+         //parameters for the prepared statement
         statement.setInt(1, student_id);
         int newInfo = statement.executeUpdate();
 
         if (newInfo > 0) {
-            System.out.println("Student deleted successfully.");
+            System.out.println("Student deleted successfully.");//if insertion successful...print success message
         } else {
-            System.out.println("ERROR: Unable to delete student");
+            System.out.println("ERROR: Unable to delete student");//error message if unsuccessful insertion
         }
         } catch (SQLException e) {
             System.out.println(e);
